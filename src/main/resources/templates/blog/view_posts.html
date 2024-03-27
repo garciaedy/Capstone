@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
+    xmlns:th="http://www.thymeleaf.org"
 >
 <div th:replace="blog/header :: header"></div>
 <body>
@@ -14,7 +14,7 @@
                     <div class="card-header">
                         <h3>
                             <a th:href="@{/post/{postUrl}(postUrl=${post.url})}"
-                               th:text="${post.title}"></a>
+                                th:text="${post.title}"></a>
                         </h3>
                         <div>
                             <strong th:text="${#temporals.format(post.createdOn, 'dd MMMM yyyy')}">
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <!-- search bar           -->
+        <!-- search bar           -->
             <div th:replace="blog/search :: search"></div>
         </div>
     </div>
