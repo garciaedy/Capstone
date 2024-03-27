@@ -2,8 +2,8 @@ package com.capstone.notxapp.service.impl;
 
 import com.capstone.notxapp.dto.PostDto;
 import com.capstone.notxapp.entity.Post;
-import com.capstone.notxapp.repository.PostRepository;
 import com.capstone.notxapp.mapper.PostMapper;
+import com.capstone.notxapp.repository.PostRepository;
 import com.capstone.notxapp.service.PostService;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +23,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<PostDto> findAllPosts() {
         List<Post> posts = postRepository.findAll();
-        return posts.stream().map(PostMapper::mapToPostDto)
-                .collect(Collectors.toList());
+        return posts.stream().map(PostMapper::mapToPostDto).collect(Collectors.toList());
     }
 
     @Override
@@ -35,15 +34,17 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostDto findPostById(Long postId) {
-        // Handle the case where postId is not found more gracefully
         Optional<Post> post = postRepository.findById(postId);
-        return post.map(PostMapper::mapToPostDto).orElse(null); // Return null or handle it as you see fit
+        return post.map(PostMapper::mapToPostDto).orElse(null);
     }
 
     @Override
     public void updatePost(PostDto postDto) {
         Post post = PostMapper.mapToPost(postDto);
-        postRepository.save(post);
+        // Ensuring we're updating an existing post
+        if (post.getId() != null && postRepository.existsById(post.getId())) {
+            postRepository.save(post);
+        }
     }
 
     @Override
@@ -51,7 +52,6 @@ public class PostServiceImpl implements PostService {
         postRepository.deleteById(postId);
     }
 
-    // Adjusted to handle multiple posts with the same URL
     @Override
     public List<PostDto> findPostsByUrl(String postUrl) {
         List<Post> posts = postRepository.findByUrl(postUrl);
@@ -61,9 +61,11 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<PostDto> searchPosts(String query) {
         List<Post> posts = postRepository.searchPosts(query);
-        return posts.stream()
-                .map(PostMapper::mapToPostDto)
-                .collect(Collectors.toList());
+        return posts.stream().map(PostMapper::mapToPostDto).collect(Collectors.toList());
     }
 
+    @Override
+    public PostDto findPostByUrl(String postUrl) {
+        return null;
+    }
 }
