@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="header">
     <meta charset="UTF-8">
-    <title>Spring Boot Thymeleaf Blog App</title>
+    <title>Not X App</title>
     <link crossorigin="anonymous"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           rel="stylesheet">
+    <style>
+        /* Define your color variables */
+        :root {
+            --light-blue-green: #a2d5c6;
+            --light-blue-green-dark: #07689f;
+        }
+        /* Use your color variables */
+        .navbar-custom {
+            background-color: var(--light-blue-green);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--light-blue-green-dark) !important;
+        }
+        /* Changes to the navbar-toggler for better visibility */
+        .navbar-toggler {
+            border-color: var(--light-blue-green-dark);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(7, 104, 159, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
+<nav class="navbar navbar-expand-lg navbar-custom" th:fragment="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Spring Boot Thymeleaf Blog App</a>
+        <a class="navbar-brand" href="#" th:href="@{/}">Not X App</a>
         <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link active" th:href="@{/}" >All Posts</a>
+                    <a class="nav-link active" th:href="@{/}" >All Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link active" th:href="@{/register}" >Register</a>
+                    <a class="nav-link" th:href="@{/register}" >Register</a>
                 </li>
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link active" th:href="@{/login}" >Login</a>
+                    <a class="nav-link" th:href="@{/login}" >Login</a>
                 </li>
             </ul>
         </div>

@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not X App Footer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+    <style>
+        body {
+            margin-bottom: 100px; /* Adjust this value based on your footer's height to prevent content overlap */
+        }
+        .footer {
+            background-color: #343a40; /* Bootstrap dark background */
+            color: #f8f9fa; /* Bootstrap's default text color for dark background */
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .footer a {
+            color: #f8f9fa; /* Ensures the link is visible on the dark background */
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
-<footer class="footer-copyright text-center bg-dark py-3"
-        style="position:fixed; width:100%; bottom:0; color:white"
-        th:fragment="footer">
+<!-- Your body content goes here -->
+
+<footer class="footer" th:fragment="footer">
     <div>
         <strong>
-            Copyright &copy; 2022 <a href="https://www.javaguides.net">Javaguides</a>
-            All rights reserved.
+            &copy; 2023 <a href="https://www.notxapp.com">Not X App</a>. All rights reserved.
         </strong>
     </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha384-+Y5AdI7y+9e2c+vGQ4TTZcgvCj81wbfOpH6k7K0v6+Nc1jHdE7YDVbYgN6YN+9I3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IbVHFmR6e9d2LgJuBm7Md6mSIOIwobFgCQZbP7EMK4u/CgOBmLrI3sj7F5Q2TSMf" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVyhVL4pz3vl4ojTmyW8rLX/2/9L6vRhA49eIjjA8u3R1LV8" crossorigin="anonymous"></script>
 </body>
 </html>
