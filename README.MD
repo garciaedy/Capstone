@@ -1,12 +1,19 @@
 # NotXApp Blog
 
 ## Application Description
-NotXApp is a dynamic blogging platform designed to foster a community of sharing and open communication. The application allows users to create, edit, and delete blog posts, as well as comment on posts by others. It aims to provide a space for individuals to express their thoughts and connect with others on a variety of topics.
+NotXApp is a dynamic blogging platform designed to
+foster a community of sharing and open communication. 
+The application allows users to create, edit, and delete blog posts
+, as well as comment on posts by others. It aims to provide a space
+for individuals to express their thoughts and connect with others on
+a variety of topics.
 
 ## Technologies Used
-- **Spring Boot**: For creating stand-alone, production-grade Spring-based applications with ease.
+- **Spring Boot**: For creating stand-alone, production-grade Spring-based
+- applications with ease.
 - **Thymeleaf**: As the server-side Java template engine for web interfaces.
-- **Spring Data JPA**: To abstract data layer, allowing seamless integration with various databases.
+- **Spring Data JPA**: To abstract data layer, allowing seamless integration 
+- with various databases.
 - **Spring Security**: For robust authentication and authorization.
 - **Maven**: Dependency management and build automation.
 - **Lombok**: To minimize boilerplate code in Java classes.

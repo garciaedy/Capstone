@@ -26,7 +26,6 @@ public class CommentServiceImpl implements CommentService {
     public void createComment(String postUrl, CommentDto commentDto) {
         List<Post> posts = postRepository.findByUrl(postUrl);
         if (!posts.isEmpty()) {
-            // Assuming we want to attach the comment to the first post found
             Post post = posts.get(0);
             Comment comment = CommentMapper.mapToComment(commentDto);
             comment.setPost(post);
@@ -47,5 +46,10 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public void deleteComment(Long commentId) {
         commentRepository.deleteById(commentId);
+    }
+
+    @Override
+    public List<CommentDto> findCommentsByPost() {
+        return null;
     }
 }
